@@ -1,0 +1,17 @@
+<div class="col-sm-9 col-md-10 main">
+<div>
+	<div class="table-responsive">
+            <table class="table table-striped" ng-repeat="product in products">
+              <thead>
+              	<tr>
+                <td><img height=200 width =300 src ={{product.img}}></td>
+                <td>
+                	<ul>
+                		<li>{{product.brand}}</li>
+                		<li><a ui-sref="root.product({catid: product.type, pid: product.brand})">Click Here for More Details</a></li>
+                	</ul>
+                </td>
+            </tr>
+           </thead>
+
+</div>

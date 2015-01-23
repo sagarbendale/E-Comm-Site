@@ -1,0 +1,45 @@
+
+	<div class="col-sm-9 col-md-10 main">
+	<div>
+		<div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	              	<tr>
+	                <td><img height=200 width=300 src ={{product[0].img}}></td>
+					<td>
+						{{product[0].brand}}
+						<ul>
+							<div ng-if="product[0].type == 'TV' ">
+								<li> Diagonal Length: {{product[0].diagonal_length}}</li>
+								<li> Length: {{product[0].length}}</li>
+								<li> Width : {{product[0].width}}</li>
+								<li> Height: {{product[0].height}}</li>
+								<li> {{product[0].HD}} </li>
+							</div>
+							<div ng-if="product[0].type == 'ROUTER' ">
+								<li> Band: {{product[0].frequency}}</li>
+								<li> Number of Lan Ports: {{product[0].lan_ports}}</li>
+							</div>
+							<div ng-if="product[0].type == 'CAMERA' ">
+								<li> MEGAPIXELS: {{product[0].megapixel}}</li>
+								<li> Optical Zoom: {{product[0].opticalzoom}}</li>
+								<li> Battery Type : {{product[0].battery}}</li>
+							</div>
+								<li> {{product[0].description}} </li>
+								<li> {{product[0].warranty_period}} </li>
+								<li> Price: {{product[0].price}}</li>
+								<div ng-if="product[0].check == 'true' ">
+	<form action="http://localhost:8081/eCommSite/receiveData" method="get">
+								<input type="hidden" name="sentData" value={{product[0].product_id}}>
+								<input type="submit" value="Buy Now"> 
+								</form>
+							</div>
+						</script>
+					</ul>
+					</td>
+				</tr>
+	           </thead>
+	       </table>
+
+
+	</div>
